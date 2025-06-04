@@ -78,12 +78,24 @@ button:hover {
   justify-content: center;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App.light {
+  background-color: #f5f5f5;
+  color: #222;
 }
+
+.App.light .navbar {
+  background-color: #ddd;
+  border-bottom: 2px solid #00f0ff;
+}
+
+.App.light .card {
+  background-color: #fff;
+  color: #000;
+}
+
+.App.light input,
+.App.light button {
+  color: #000;
+}
+
+

@@ -8,10 +8,13 @@ import './App.css';
 
 function App() {
   const [username, setUsername] = useState('');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const storedUser = localStorage.getItem('username');
+    const savedTheme = localStorage.getItem('theme');
     if (storedUser) setUsername(storedUser);
+    if (savedTheme) setTheme(savedTheme);
   }, []);
 
   const handleLogin = (uname) => {
@@ -24,19 +27,56 @@ function App() {
     localStorage.removeItem('username');
   };
 
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  };
+
   return (
-    <Router>
-      {username && <Navbar username={username} onLogout={handleLogout} />}
-      <Routes>
-        <Route path="/" element={
-          username
-            ? <Navigate to="/games" />
-            : <Login onLogin={handleLogin} />
-        } />
-        <Route path="/games" element={username ? <Games username={username} /> : <Navigate to="/" />} />
-        <Route path="/profile" element={username ? <Profile username={username} /> : <Navigate to="/" />} />
-      </Routes>
-    </Router>
+    <div className={`App ${theme}`}>
+      <Router>
+        {username && (
+          <Navbar
+            username={username}
+            onLogout={handleLogout}
+            toggleTheme={toggleTheme}
+          />
+        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              username ? (
+                <Navigate to="/games" />
+              ) : (
+                <Login onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/games"
+            element={
+              username ? (
+                <Games username={username} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              username ? (
+                <Profile username={username} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

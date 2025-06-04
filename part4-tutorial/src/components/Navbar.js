@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ onLogout, username }) => {
+const Navbar = ({ onLogout, username, toggleTheme }) => {
   const avatarLetter = username ? username[0].toUpperCase() : '?';
 
   return (
@@ -11,6 +11,7 @@ const Navbar = ({ onLogout, username }) => {
         <Link to="/games">Games</Link>
         <Link to="/profile">Profile</Link>
       </div>
+      <button onClick={toggleTheme}>Toggle Theme</button>
       <button onClick={onLogout}>Logout</button>
     </div>
   );
