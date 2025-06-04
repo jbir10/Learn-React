@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      {username && <Navbar onLogout={handleLogout} />}
+      {username && <Navbar username={username} onLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={
           username

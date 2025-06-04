@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ onLogout }) => {
+const Navbar = ({ onLogout, username }) => {
+  const avatarLetter = username ? username[0].toUpperCase() : '?';
+
   return (
     <div className="navbar">
-      <div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        <div className="avatar">{avatarLetter}</div>
         <Link to="/games">Games</Link>
         <Link to="/profile">Profile</Link>
       </div>
