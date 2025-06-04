@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Games from './pages/Games';
 import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
               )
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

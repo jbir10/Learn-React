@@ -45,9 +45,13 @@ const Games = ({ username }) => {
   };
 
   const handleDelete = (index) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this game?");
+    if (!confirmDelete) return;
+
     setGames((prev) => prev.filter((_, i) => i !== index));
     if (editIndex === index) setEditIndex(null);
   };
+
 
   const handleEdit = (index) => {
     const game = userGames[index];
