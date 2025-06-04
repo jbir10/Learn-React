@@ -7,7 +7,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #00f0ff;
+  color: var(--accent);
 }
 
 .App {
@@ -19,7 +19,7 @@ a {
 input, select {
   background-color: #1c1c1c;
   color: #e0e0e0;
-  border: 1px solid #00f0ff;
+  border: 1px solid var(--accent);
   padding: 10px;
   border-radius: 5px;
   margin: 8px 0;
@@ -27,7 +27,7 @@ input, select {
 }
 
 button {
-  background-color: #00f0ff;
+  background-color: var(--accent);
   color: #0f0f0f;
   border: none;
   padding: 10px 20px;
@@ -39,7 +39,7 @@ button {
 
 button:hover {
   background-color: #0ff;
-  box-shadow: 0 0 10px #00f0ff;
+  box-shadow: 0 0 10px var(--accent);
 }
 
 .navbar {
@@ -48,7 +48,7 @@ button:hover {
   align-items: center;
   background-color: #1a1a1a;
   padding: 15px 25px;
-  border-bottom: 2px solid #00f0ff;
+  border-bottom: 2px solid var(--accent);
 }
 
 .navbar a {
@@ -58,15 +58,15 @@ button:hover {
 
 .card {
   background-color: #1e1e1e;
-  border: 1px solid #00f0ff;
+  border: 1px solid var(--accent);
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
-  box-shadow: 0 0 5px #00f0ff33;
+  box-shadow: 0 0 5px var(--accent);
 }
 
 .avatar {
-  background-color: #00f0ff;
+  background-color: var(--accent);
   color: #0f0f0f;
   font-weight: bold;
   font-size: 1.2em;
@@ -85,7 +85,7 @@ button:hover {
 
 .App.light .navbar {
   background-color: #ddd;
-  border-bottom: 2px solid #00f0ff;
+  border-bottom: 2px solid var(--accent);
 }
 
 .App.light .card {
@@ -97,5 +97,3 @@ button:hover {
 .App.light button {
   color: #000;
 }
-
-

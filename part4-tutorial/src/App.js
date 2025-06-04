@@ -10,12 +10,15 @@ import './App.css';
 function App() {
   const [username, setUsername] = useState('');
   const [theme, setTheme] = useState('dark');
+  const [accentColor, setAccentColor] = useState('#00f0ff'); // Neon Blue default
 
   useEffect(() => {
     const storedUser = localStorage.getItem('username');
     const savedTheme = localStorage.getItem('theme');
+    const savedAccent = localStorage.getItem('accent');
     if (storedUser) setUsername(storedUser);
     if (savedTheme) setTheme(savedTheme);
+    if (savedAccent) setAccentColor(savedAccent);
   }, []);
 
   const handleLogin = (uname) => {
@@ -35,13 +38,14 @@ function App() {
   };
 
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App ${theme}`} style={{ '--accent': accentColor }}>
       <Router>
         {username && (
           <Navbar
             username={username}
             onLogout={handleLogout}
             toggleTheme={toggleTheme}
+            setAccentColor={setAccentColor}
           />
         )}
         <Routes>
