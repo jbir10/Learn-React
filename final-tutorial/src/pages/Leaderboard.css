@@ -9,6 +9,16 @@
   color: #e0e0e0;
 }
 
+.leaderboard-table a {
+  color: #00f0ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.leaderboard-table a:hover {
+  text-decoration: underline;
+}
+
 .leaderboard-table th, .leaderboard-table td {
   border: 1px solid #00f0ff;
   padding: 12px;

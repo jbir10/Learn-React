@@ -1,6 +1,7 @@
 import React from 'react';
 import leaderboardData from '../data/leaderboardData';
 import './Leaderboard.css';
+import { Link } from 'react-router-dom';
 
 const Leaderboard = () => {
   return (
@@ -20,7 +21,7 @@ const Leaderboard = () => {
             <tr key={index}>
               <td>#{index + 1}</td>
               <td>{entry.username}</td>
-              <td>{entry.game}</td>
+              <td><Link to={`/games/${entry.gameId}`}>{entry.game}</Link></td>
               <td>{entry.score}</td>
             </tr>
           ))}

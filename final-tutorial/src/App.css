@@ -33,3 +33,11 @@ input[type="text"] {
   font-size: 1em;
   margin-top: 10px;
 }
+
+.game-profile {
+  background-color: #1c1c1c;
+  border: 1px solid #00f0ff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
