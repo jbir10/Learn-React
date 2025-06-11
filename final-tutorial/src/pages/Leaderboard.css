@@ -1,0 +1,24 @@
+.page {
+  padding: 20px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+  border: 1px solid #00f0ff;
+  padding: 12px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: #111;
+}
+
+.leaderboard-table tr:hover {
+  background-color: #222;
+}
